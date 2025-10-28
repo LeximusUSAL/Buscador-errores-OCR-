@@ -5,7 +5,7 @@ Herramientas para buscar palabras clave en documentos que tienen errores de OCR.
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.8+-blue.svg" alt="Python 3.8+">
   <img src="https://img.shields.io/badge/License-Academic-green.svg" alt="License">
-  <img src="https://img.shields.io/badge/script.svg" alt="Script LexiMus">
+  <img src="https://img.shields.io/badge/script.svg" alt="script">
 </p>
 # 📘 INSTRUCCIONES: Buscador Genérico de Palabras
 
