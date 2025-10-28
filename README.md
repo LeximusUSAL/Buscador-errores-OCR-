@@ -1,6 +1,6 @@
 # 📄 Buscador en documentos históricos con errores de OCR
 
-Herramientas para buscar palabras clave en documentos que tienen errores de OCR. Desarrollada especialmente para los textos de prensa histórica disponibles completos en txt en la hemeroteca de la Biblioteca Nacional de España. 
+Herramienta para buscar palabras clave en documentos que tienen errores de OCR. Desarrollada especialmente para los textos de prensa histórica disponibles completos en txt en la hemeroteca de la Biblioteca Nacional de España. 
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.8+-blue.svg" alt="Python 3.8+">
