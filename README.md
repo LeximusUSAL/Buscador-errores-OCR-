@@ -357,8 +357,7 @@ Instituciones participantes:
 
 Este script es parte del proyecto LexiMus USAL y está disponible para uso académico e investigación. Si lo utilizas en tus investigaciones ¡RECUERDA CITARNOS!
 
-LeximusUSAL. (2025). Buscador-errores-OCR- [Repositorio GitHub]. GitHub. https://github.com/LeximusUSAL/Buscador-errores-OCR-
----
+LexiMus USAL. (2025). Buscador-errores-OCR-[Repositorio GitHub]. GitHub. https://github.com/LeximusUSAL/Buscador-errores-OCR 
+
 
 **✨ ¡Buena suerte con tu investigación! ✨**
-# Buscador-errores-OCR-
