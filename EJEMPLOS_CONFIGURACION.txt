@@ -1,0 +1,448 @@
+═══════════════════════════════════════════════════════════════════════════════
+   EJEMPLOS DE CONFIGURACIÓN - BUSCADOR GENÉRICO DE PALABRAS
+   Copia y pega la configuración que necesites en el script
+═══════════════════════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ EJEMPLO 1: COMPOSITOR - BEETHOVEN                                           │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+PALABRA_CLAVE = 'beethoven'
+NOMBRE_MOSTRAR = 'Beethoven'
+DESCRIPCION = 'Ludwig van Beethoven (1770-1827) - Compositor alemán'
+
+VARIANTES_ORTOGRAFICAS = {
+    'beethoven', 'bethowen', 'betoven', 'bethoven', 'betowen',
+    'Beethoven', 'Bethowen', 'Betoven', 'Bethoven', 'Betowen',
+    'BEETHOVEN', 'BETHOWEN', 'BETOVEN', 'BETHOVEN',
+}
+
+LISTA_EXCLUSION = {
+    'bet',
+}
+
+UMBRAL_LEVENSHTEIN = 2
+MIN_LONGITUD_PALABRA = 7
+VENTANA_CONTEXTO = 150
+
+MAPEO_CARACTERES_OCR = {
+    'b': '[bB]',
+    'e': '[eé3€]',
+    't': '[tT]',
+    'h': '[hH]',
+    'o': '[oó0OQ]',
+    'v': '[vV]',
+    'n': '[nñ]',
+}
+
+EMOJI = '🎼'
+
+───────────────────────────────────────────────────────────────────────────────
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ EJEMPLO 2: COMPOSITOR - WAGNER                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+PALABRA_CLAVE = 'wagner'
+NOMBRE_MOSTRAR = 'Wagner / Vagner'
+DESCRIPCION = 'Richard Wagner (1813-1883) - Compositor alemán'
+
+VARIANTES_ORTOGRAFICAS = {
+    'wagner', 'vagner', 'wágner', 'vágner', 'waguer', 'váguer',
+    'Wagner', 'Vagner', 'Wágner', 'Vágner', 'Waguer', 'Váguer',
+    'WAGNER', 'VAGNER', 'WÁGNER', 'VÁGNER',
+}
+
+LISTA_EXCLUSION = {
+    'vagar',
+    'vagón',
+    'vago',
+}
+
+UMBRAL_LEVENSHTEIN = 2
+MIN_LONGITUD_PALABRA = 5
+VENTANA_CONTEXTO = 150
+
+MAPEO_CARACTERES_OCR = {
+    'w': '[wvW]',       # w puede confundirse con v
+    'a': '[aáà]',
+    'g': '[gG]',
+    'n': '[nñ]',
+    'e': '[eé]',
+    'r': '[rR]',
+}
+
+EMOJI = '🎭'
+
+───────────────────────────────────────────────────────────────────────────────
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ EJEMPLO 3: COMPOSITOR - MOZART                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+PALABRA_CLAVE = 'mozart'
+NOMBRE_MOSTRAR = 'Mozart / Mosart'
+DESCRIPCION = 'Wolfgang Amadeus Mozart (1756-1791) - Compositor austriaco'
+
+VARIANTES_ORTOGRAFICAS = {
+    'mozart', 'mosart', 'mozarth', 'mozard', 'mozar',
+    'Mozart', 'Mosart', 'Mozarth', 'Mozard', 'Mozar',
+    'MOZART', 'MOSART', 'MOZARTH', 'MOZARD',
+}
+
+LISTA_EXCLUSION = {
+    'mosaico',
+}
+
+UMBRAL_LEVENSHTEIN = 2
+MIN_LONGITUD_PALABRA = 5
+VENTANA_CONTEXTO = 150
+
+MAPEO_CARACTERES_OCR = {
+    'm': '[mM]',
+    'o': '[oó0]',
+    'z': '[zZ]',
+    'a': '[aá]',
+    'r': '[rR]',
+    't': '[tT]',
+}
+
+EMOJI = '🎵'
+
+───────────────────────────────────────────────────────────────────────────────
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ EJEMPLO 4: GÉNERO MUSICAL - JAZZ                                            │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+PALABRA_CLAVE = 'jazz'
+NOMBRE_MOSTRAR = 'Jazz'
+DESCRIPCION = 'Género musical afroamericano - Inicios siglo XX'
+
+VARIANTES_ORTOGRAFICAS = {
+    'jazz', 'jas', 'jass', 'yaz', 'yass', 'jas',
+    'Jazz', 'Jas', 'Jass', 'Yaz', 'Yass',
+    'JAZZ', 'JAS', 'JASS', 'YAZ', 'YASS',
+}
+
+LISTA_EXCLUSION = {
+    'jas',      # muy común en español antiguo
+}
+
+UMBRAL_LEVENSHTEIN = 2
+MIN_LONGITUD_PALABRA = 3
+VENTANA_CONTEXTO = 150
+
+MAPEO_CARACTERES_OCR = {
+    'j': '[jJ]',
+    'a': '[aá]',
+    'z': '[zZ]',
+}
+
+EMOJI = '🎺'
+
+───────────────────────────────────────────────────────────────────────────────
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ EJEMPLO 5: INSTRUMENTO - PIANO                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+PALABRA_CLAVE = 'piano'
+NOMBRE_MOSTRAR = 'Piano'
+DESCRIPCION = 'Instrumento musical de teclado y cuerdas'
+
+VARIANTES_ORTOGRAFICAS = {
+    'piano', 'plano',    # OCR confunde i con l
+    'Piano', 'Plano',
+    'PIANO', 'PLANO',
+    'píano', 'pianos',
+}
+
+LISTA_EXCLUSION = {
+    'plano',     # palabra común española
+    'llano',
+}
+
+UMBRAL_LEVENSHTEIN = 1
+MIN_LONGITUD_PALABRA = 4
+VENTANA_CONTEXTO = 150
+
+MAPEO_CARACTERES_OCR = {
+    'p': '[pP]',
+    'i': '[ií1lI]',    # i puede confundirse con l, 1, I
+    'a': '[aá]',
+    'n': '[nñ]',
+    'o': '[oó0]',
+}
+
+EMOJI = '🎹'
+
+───────────────────────────────────────────────────────────────────────────────
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ EJEMPLO 6: INSTRUMENTO - GUITARRA                                           │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+PALABRA_CLAVE = 'guitarra'
+NOMBRE_MOSTRAR = 'Guitarra'
+DESCRIPCION = 'Instrumento de cuerda pulsada'
+
+VARIANTES_ORTOGRAFICAS = {
+    'guitarra', 'quitarra', 'guitara', 'quitara', 'guítarra',
+    'Guitarra', 'Quitarra', 'Guitara', 'Quitara', 'Guítarra',
+    'GUITARRA', 'QUITARRA', 'GUITARA', 'QUITARA',
+}
+
+LISTA_EXCLUSION = {
+    'quitar',
+    'quit',
+}
+
+UMBRAL_LEVENSHTEIN = 2
+MIN_LONGITUD_PALABRA = 7
+VENTANA_CONTEXTO = 150
+
+MAPEO_CARACTERES_OCR = {
+    'g': '[gqGQ]',     # g puede confundirse con q
+    'u': '[uú]',
+    'i': '[ií1]',
+    't': '[tT]',
+    'a': '[aá]',
+    'r': '[rR]',
+}
+
+EMOJI = '🎸'
+
+───────────────────────────────────────────────────────────────────────────────
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ EJEMPLO 7: GÉNERO MUSICAL - ÓPERA                                           │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+PALABRA_CLAVE = 'opera'
+NOMBRE_MOSTRAR = 'Ópera'
+DESCRIPCION = 'Género teatral musical - Drama cantado'
+
+VARIANTES_ORTOGRAFICAS = {
+    'opera', 'ópera', 'operas', 'óperas',
+    'Opera', 'Ópera', 'Operas', 'Óperas',
+    'OPERA', 'ÓPERA', 'OPERAS', 'ÓPERAS',
+}
+
+LISTA_EXCLUSION = {
+    'operación',
+    'operador',
+    'operar',
+}
+
+UMBRAL_LEVENSHTEIN = 1
+MIN_LONGITUD_PALABRA = 4
+VENTANA_CONTEXTO = 150
+
+MAPEO_CARACTERES_OCR = {
+    'o': '[oó0OQ]',
+    'p': '[pP]',
+    'e': '[eé3]',
+    'r': '[rR]',
+    'a': '[aá]',
+}
+
+EMOJI = '🎭'
+
+───────────────────────────────────────────────────────────────────────────────
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ EJEMPLO 8: COMPOSITOR ESPAÑOL - FALLA                                       │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+PALABRA_CLAVE = 'falla'
+NOMBRE_MOSTRAR = 'Manuel de Falla'
+DESCRIPCION = 'Manuel de Falla (1876-1946) - Compositor español'
+
+VARIANTES_ORTOGRAFICAS = {
+    'falla', 'faüa', 'faila', 'fala',
+    'Falla', 'Faüa', 'Faila', 'Fala',
+    'FALLA', 'FAÜA', 'FAILA', 'FALA',
+}
+
+LISTA_EXCLUSION = {
+    'fallar',
+    'fallaba',
+    'fallaron',
+    'fallecido',
+    'fallece',
+}
+
+UMBRAL_LEVENSHTEIN = 2
+MIN_LONGITUD_PALABRA = 4
+VENTANA_CONTEXTO = 150
+
+MAPEO_CARACTERES_OCR = {
+    'f': '[fF]',
+    'a': '[aá]',
+    'l': '[lL1]',
+}
+
+EMOJI = '🇪🇸'
+
+───────────────────────────────────────────────────────────────────────────────
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ EJEMPLO 9: COMPOSITOR - VERDI                                               │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+PALABRA_CLAVE = 'verdi'
+NOMBRE_MOSTRAR = 'Verdi / Giuseppe Verdi'
+DESCRIPCION = 'Giuseppe Verdi (1813-1901) - Compositor italiano'
+
+VARIANTES_ORTOGRAFICAS = {
+    'verdi', 'verdí', 'vérdi', 'verdi', 'yerdí',
+    'Verdi', 'Verdí', 'Vérdi', 'Yerdí',
+    'VERDI', 'VERDÍ', 'VÉRDI', 'YERDÍ',
+}
+
+LISTA_EXCLUSION = {
+    'verde',
+    'verdad',
+    'verdadero',
+}
+
+UMBRAL_LEVENSHTEIN = 2
+MIN_LONGITUD_PALABRA = 4
+VENTANA_CONTEXTO = 150
+
+MAPEO_CARACTERES_OCR = {
+    'v': '[vVy]',      # v puede confundirse con y
+    'e': '[eé3]',
+    'r': '[rR]',
+    'd': '[dD]',
+    'i': '[ií1]',
+}
+
+EMOJI = '🎭'
+
+───────────────────────────────────────────────────────────────────────────────
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ EJEMPLO 10: GÉNERO MUSICAL - FLAMENCO                                       │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+PALABRA_CLAVE = 'flamenco'
+NOMBRE_MOSTRAR = 'Flamenco'
+DESCRIPCION = 'Arte musical tradicional andaluz - Patrimonio UNESCO'
+
+VARIANTES_ORTOGRAFICAS = {
+    'flamenco', 'flamenca', 'flamencos', 'flamencas',
+    'Flamenco', 'Flamenca', 'Flamencos', 'Flamencas',
+    'FLAMENCO', 'FLAMENCA', 'FLAMENCOS', 'FLAMENCAS',
+}
+
+LISTA_EXCLUSION = {
+    'flamingo',   # ave
+}
+
+UMBRAL_LEVENSHTEIN = 2
+MIN_LONGITUD_PALABRA = 7
+VENTANA_CONTEXTO = 150
+
+MAPEO_CARACTERES_OCR = {
+    'f': '[fF]',
+    'l': '[lL1]',
+    'a': '[aá]',
+    'm': '[mM]',
+    'e': '[eé]',
+    'n': '[nñ]',
+    'c': '[cC]',
+    'o': '[oó0]',
+}
+
+EMOJI = '💃'
+
+───────────────────────────────────────────────────────────────────────────────
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ EJEMPLO 11: COMPOSITOR - CHOPIN                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+PALABRA_CLAVE = 'chopin'
+NOMBRE_MOSTRAR = 'Chopin / Chopín'
+DESCRIPCION = 'Frédéric Chopin (1810-1849) - Compositor polaco'
+
+VARIANTES_ORTOGRAFICAS = {
+    'chopin', 'chopín', 'cbopin', 'cbopín', 'shopin', 'shopín',
+    'Chopin', 'Chopín', 'Cbopin', 'Cbopín', 'Shopin', 'Shopín',
+    'CHOPIN', 'CHOPÍN', 'CBOPIN', 'CBOPÍN', 'SHOPIN', 'SHOPÍN',
+}
+
+LISTA_EXCLUSION = {
+    'chopo',
+}
+
+UMBRAL_LEVENSHTEIN = 2
+MIN_LONGITUD_PALABRA = 5
+VENTANA_CONTEXTO = 150
+
+MAPEO_CARACTERES_OCR = {
+    'c': '[cC]',
+    'h': '[hH]',
+    'o': '[oó0]',
+    'p': '[pP]',
+    'i': '[ií1]',
+    'n': '[nñ]',
+}
+
+EMOJI = '🎹'
+
+───────────────────────────────────────────────────────────────────────────────
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ EJEMPLO 12: INSTITUCIÓN - CONSERVATORIO                                     │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+PALABRA_CLAVE = 'conservatorio'
+NOMBRE_MOSTRAR = 'Conservatorio'
+DESCRIPCION = 'Institución educativa musical'
+
+VARIANTES_ORTOGRAFICAS = {
+    'conservatorio', 'conservatorío', 'conservatono',
+    'Conservatorio', 'Conservatorío', 'Conservatono',
+    'CONSERVATORIO', 'CONSERVATORÍO', 'CONSERVATONO',
+}
+
+LISTA_EXCLUSION = {
+    'conservador',
+    'conservar',
+}
+
+UMBRAL_LEVENSHTEIN = 2
+MIN_LONGITUD_PALABRA = 12
+VENTANA_CONTEXTO = 150
+
+MAPEO_CARACTERES_OCR = {
+    'c': '[cC]',
+    'o': '[oó0]',
+    'n': '[nñ]',
+    's': '[sS]',
+    'e': '[eé]',
+    'r': '[rR]',
+    'v': '[vV]',
+    'a': '[aá]',
+    't': '[tT]',
+    'i': '[ií1]',
+}
+
+EMOJI = '🎓'
+
+═══════════════════════════════════════════════════════════════════════════════
+                             FIN DE EJEMPLOS
+═══════════════════════════════════════════════════════════════════════════════
+
+INSTRUCCIONES DE USO:
+
+1. Elige el ejemplo que más se parezca a tu búsqueda
+2. Copia toda la configuración (desde PALABRA_CLAVE hasta EMOJI)
+3. Pega en el archivo "buscador_generico_palabras.py"
+4. Reemplaza la sección "CONFIGURACIÓN MODIFICABLE"
+5. Ejecuta el script
+
+¡Buena suerte con tu investigación!
