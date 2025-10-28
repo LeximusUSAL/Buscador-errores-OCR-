@@ -12,7 +12,7 @@ Herramienta para buscar palabras clave en documentos que tienen errores de OCR. 
 
 ## 🎯 ¿Qué hace este script?
 
-Este script busca palabras específicas en corpus de textos históricos con errores de OCR. Es ideal para investigación en Humanidades Digitales.
+Este script busca palabras específicas en corpus de textos históricos con errores de OCR. Está pensado para iniciarse en la investigación en Humanidades Digitales.
 
 **Características principales:**
 - ✅ Tolerante a errores de OCR (hasta 30% de error)
